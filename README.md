@@ -46,12 +46,14 @@ set TESSERACT_CMD=C:\Program Files\Tesseract-OCR\tesseract.exe
 
 ### 2. Install additional Tesseract language packs (optional)
 
-**macOS:**
+**macOS — installs all languages at once:**
 ```bash
 brew install tesseract-lang
 ```
 
-**Ubuntu:**
+> **macOS note:** Do NOT use `apt` — that is a Linux-only package manager. On macOS always use `brew`.
+
+**Ubuntu / Debian:**
 ```bash
 sudo apt install tesseract-ocr-ara tesseract-ocr-fra  # add languages as needed
 ```
@@ -59,8 +61,10 @@ sudo apt install tesseract-ocr-ara tesseract-ocr-fra  # add languages as needed
 ### 3. Install Python dependencies
 
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
+
+> **macOS note:** Use `pip3` (not `pip`) — on macOS `pip` is often not found. If `pip3` also fails, use `python3 -m pip install -r requirements.txt`.
 
 ## Usage
 

@@ -54,6 +54,7 @@ class OcrApp(tk.Tk):
         self.title("Python OCR  -  i2OCR-style desktop client")
         self.geometry("1180x720")
         self.minsize(900, 600)
+        self.attributes("-alpha", 1.0)  # force macOS to render the window
 
         self.current_file: str | None = None
         self.result: ocr_engine.OcrResult | None = None
@@ -285,6 +286,10 @@ class OcrApp(tk.Tk):
 
 def main():
     app = OcrApp()
+    app.update_idletasks()
+    app.update()
+    app.lift()
+    app.focus_force()
     app.mainloop()
 
 
